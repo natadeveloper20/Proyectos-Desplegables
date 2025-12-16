@@ -1,0 +1,20 @@
+.contact-search-form {
+    padding: 10px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+.contact-search-form input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-300);
+    background-color: var(--gray-100);
+    outline: none;
+    font-size: 14px;
+}
+
+.contact-search-form input:focus {
+    background-color: var(--white);
+    box-shadow: 0 0 2px var(--teal);
+}
