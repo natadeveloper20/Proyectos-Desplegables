@@ -9,21 +9,45 @@ const ContactListContextProvider = () => {
     const [loadingContactsState, setLoadingContactState] = useState(true)
 
 
-    function loadContactList (){
+    function loadContactList() {
         setLoadingContactState(true)
         setTimeout(
             function () {
-                console.log('Cargando la lista de contactos')
-                const contact_list = getContactList()
-                setContactState(contact_list)
+                const contact_list = getContactList() // Idealmente esto vendrá de localStorage o API
+                // Inicializamos si está vacío para pruebas
+                if (contactState.length === 0) {
+                    setContactState(contact_list)
+                }
                 setLoadingContactState(false)
             },
-            2000
+            500
         )
-        
     }
 
-    useEffect (
+    const addContact = (newContact) => {
+        // Generar ID temporal si no existe
+        const contactWithId = {
+            ...newContact,
+            contact_id: Date.now(),
+            contact_unseen_messages: 0,
+            last_message_content: 'Nuevo contacto',
+            last_message_state: 'NOT_RECEIVED',
+            last_message_created_at: new Date()
+        }
+        setContactState(prev => [contactWithId, ...prev])
+    }
+
+    const deleteContact = (contactId) => {
+        setContactState(prev => prev.filter(c => c.contact_id !== contactId))
+    }
+
+    const updateContact = (updatedContact) => {
+        setContactState(prev => prev.map(c =>
+            c.contact_id === updatedContact.contact_id ? updatedContact : c
+        ))
+    }
+
+    useEffect(
         loadContactList,
         []
     )
@@ -32,6 +56,9 @@ const ContactListContextProvider = () => {
         contactState,
         loadingContactsState,
         loadContactList,
+        addContact,
+        deleteContact,
+        updateContact
     }
 
     return (

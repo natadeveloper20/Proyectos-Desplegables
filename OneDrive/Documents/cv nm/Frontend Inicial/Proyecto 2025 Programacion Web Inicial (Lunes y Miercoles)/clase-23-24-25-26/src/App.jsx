@@ -6,6 +6,7 @@ import MessagesScreen from "./Screens/MessagesScreen/MessagesScreen"
 import './global.css'
 import ContactListContextProvider from "./Context/ContactListContext"
 import ContactDetailContextProvider from "./Context/ContactDetailContext"
+import ContactForm from './Components/ContactForm/ContactForm'
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
               }
             />
           </Route>
+
+          <Route path="/contacts/new" element={<ContactForm />} />
+
         </Route>
 
         <Route

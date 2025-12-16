@@ -7,7 +7,8 @@ Este proyecto es una aplicación web desarrollada con React que simula la funcio
 - **Visualización de Contactos**: Lista de contactos con avatares y últimos mensajes.
 - **Búsqueda**: Filtrado de contactos en tiempo real mediante parámetros de url (`useSearchParams`).
 - **Navegación**: Enrutamiento dinámico entre pantallas (lista de contactos y chat) usando `react-router-dom`.
-- **Mensajería**: Interfaz simula un chat individual.
+- **Mensajería**: Interfaz simula un chat individual con envío de mensajes, respuesta automática y confirmación de lectura (doble check).
+- **Gestión de Contactos (CRUD)**: Formulario completo para agregar nuevos contactos.
 - **Temas**: Soporte para tema claro y oscuro (Context API).
 - **Responsive**: Diseño adaptable a diferentes tamaños de pantalla (320px - 2000px).
 
@@ -16,6 +17,7 @@ Este proyecto es una aplicación web desarrollada con React que simula la funcio
 - **React**: Biblioteca principal para la construcción de interfaces.
 - **React Router DOM**: Para el manejo de rutas y navegación.
 - **Vite**: Entorno de desarrollo y empaquetado.
+- **React Icons**: Librería de iconos para una interfaz realista.
 - **CSS**: Estilos personalizados y variables CSS.
 
 ## Requisitos Cumplidos

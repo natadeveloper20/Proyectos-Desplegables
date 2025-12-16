@@ -1,6 +1,6 @@
 /* src/Screens/MessagesScreen/MessagesScreen.css */
 
-/* Header del Chat */
+/* ... estilos anteriores ... */
 .chat-header-info {
     display: flex;
     flex-direction: column;
@@ -29,19 +29,17 @@
     color: var(--wa-panel-header-icon);
 }
 
-
-/* Contenedor de Mensajes */
 .messages-container {
     flex: 1;
     overflow-y: auto;
     padding: 20px 60px;
-    /* Padding lateral amplio como en desktop */
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 2px;
+    /* Menos espacio entre mensajes consecutivos */
 }
 
-/* Scrollbar dark para mensajes */
+/* Scrollbar dark */
 .messages-container::-webkit-scrollbar {
     width: 6px;
 }
@@ -50,7 +48,7 @@
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Footer (Input de Mensaje) */
+/* Footer */
 .chat-footer {
     min-height: 62px;
     background-color: var(--wa-dark-header);
@@ -86,6 +84,72 @@
 
 .message-input-container input::placeholder {
     color: var(--wa-text-secondary);
+}
+
+/* Nuevos estilos para burbujas dinámicas */
+
+.system-message {
+    background-color: #182229;
+    color: #ffd279;
+    font-size: 12.5px;
+    padding: 5px 12px;
+    border-radius: 8px;
+    align-self: center;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+    max-width: 90%;
+}
+
+.message-bubble {
+    padding: 6px 7px 8px 9px;
+    border-radius: 8px;
+    max-width: 65%;
+    font-size: 14px;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+    position: relative;
+    margin-bottom: 8px;
+    line-height: 19px;
+    color: var(--wa-text-primary);
+}
+
+.message-incoming {
+    align-self: flex-start;
+    background-color: var(--wa-incoming-msg);
+    border-top-left-radius: 0;
+}
+
+.message-outgoing {
+    align-self: flex-end;
+    background-color: var(--wa-outgoing-msg);
+    border-top-right-radius: 0;
+}
+
+.message-meta {
+    float: right;
+    margin-top: 4px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 15px;
+}
+
+.message-time {
+    font-size: 11px;
+    color: var(--wa-text-secondary);
+}
+
+.message-status {
+    font-size: 16px;
+    /* Icon font size */
+    color: var(--wa-text-secondary);
+    display: flex;
+}
+
+.icon-read {
+    color: #53bdeb;
+    /* Azul de visto */
 }
 
 @media (max-width: 768px) {
