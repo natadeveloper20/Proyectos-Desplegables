@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSearchParams } from 'react-router'
+import { MdSearch } from "react-icons/md";
 import './ContactSearchForm.css'
 
 export default function ContactSearchForm() {
@@ -17,9 +18,10 @@ export default function ContactSearchForm() {
 
   return (
     <div className='contact-search-form'>
+      <MdSearch className="search-icon" />
       <input
         type="text"
-        placeholder="Buscar o empezar un nuevo chat"
+        placeholder="Buscar un chat o iniciar uno nuevo"
         value={currentSearch}
         onChange={handleChange}
         aria-label="Buscar contactos"

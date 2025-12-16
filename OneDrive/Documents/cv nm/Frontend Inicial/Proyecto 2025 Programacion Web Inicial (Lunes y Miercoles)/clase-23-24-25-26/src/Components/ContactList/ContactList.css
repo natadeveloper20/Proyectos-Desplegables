@@ -1,12 +1,126 @@
-.contact-avatar{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+/* src/Components/ContactList/ContactList.css */
+
+.contact-list-container {
+    flex: 1;
+    overflow-y: auto;
+    /* Scroll vertical */
+    overflow-x: hidden;
+}
+
+/* Scrollbar personalizada dark */
+.contact-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.contact-list-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.contact-list-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+/* Item de Contacto Individual */
+.contact-item {
+    display: flex;
+    padding: 0 12px;
+    height: 72px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.2s;
+    align-items: center;
+    color: var(--wa-text-primary);
+    text-decoration: none;
+    /* Reset link styles */
+}
+
+.contact-item:hover {
+    background-color: var(--wa-hover);
+}
+
+.contact-item.active {
+    background-color: var(--wa-input-bg);
+    /* O un color intermedio */
 }
 
 
+/* Imagen Avatar */
+.contact-avatar {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
 
-.contact-item{
-    color: black
+/* Información del Contacto (columna derecha) */
+.contact-info {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10px;
+    border-bottom: 1px solid var(--wa-divider);
+    min-width: 0;
+    /* Para que el text-overflow funcione */
+}
+
+/* Fila superior (Nombre + Hora) */
+.contact-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3px;
+}
+
+.contact-header-row h2 {
+    font-size: 17px;
+    font-weight: 400;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--wa-text-primary);
+}
+
+.message-time {
+    font-size: 12px;
+    color: var(--wa-text-secondary);
+    margin-left: 6px;
+    flex-shrink: 0;
+}
+
+/* Fila inferior (Mensaje + Checks/Badge) */
+.contact-message-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.last-message {
+    font-size: 14px;
+    color: var(--wa-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding-right: 6px;
+}
+
+.unread-badge {
+    background-color: var(--wa-primary);
+    color: #111b21;
+    /* Texto oscuro sobre verde */
+    font-size: 12px;
+    font-weight: 500;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
 }

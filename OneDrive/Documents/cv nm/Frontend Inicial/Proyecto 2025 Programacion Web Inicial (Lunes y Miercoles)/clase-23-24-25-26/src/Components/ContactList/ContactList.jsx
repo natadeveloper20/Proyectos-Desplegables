@@ -24,7 +24,7 @@ export default function ContactList() {
         )
     }
     return (
-        <div>
+        <div className='contact-list-container'>
             {
                 contactState
                     .filter(contact =>
@@ -34,17 +34,19 @@ export default function ContactList() {
                         function (contact) {
                             return (
                                 <Link className='contact-item' key={contact.contact_id} to={'/chat/' + contact.contact_id + '/messages'}>
-                                    <div>
-                                        <img className='contact-avatar' src={contact.contact_avatar} alt={contact.contact_name} />
-                                        <h2>{contact.contact_name}</h2>
-                                    </div>
-                                    <div>
-                                        <p>{contact.last_message_content}</p>
-                                        {/* <p>{contact.last_message_created_at}</p> */}
-                                        {
-                                            contact.contact_unseen_messages > 0 &&
-                                            <span>{contact.contact_unseen_messages}</span>
-                                        }
+                                    <img className='contact-avatar' src={contact.contact_avatar} alt={contact.contact_name} />
+                                    <div className='contact-info'>
+                                        <div className='contact-header-row'>
+                                            <h2>{contact.contact_name}</h2>
+                                            <span className='message-time'>Ayer</span> {/* Placeholder temporario */}
+                                        </div>
+                                        <div className='contact-message-row'>
+                                            <p className='last-message'>{contact.last_message_content}</p>
+                                            {
+                                                contact.contact_unseen_messages > 0 &&
+                                                <span className='unread-badge'>{contact.contact_unseen_messages}</span>
+                                            }
+                                        </div>
                                     </div>
                                 </Link>
                             )
