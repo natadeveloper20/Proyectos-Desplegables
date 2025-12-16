@@ -1,4 +1,3 @@
-import { useState } from "react"
 import ContactSidebar from "./Components/ContactSidebar/ContactSidebar"
 import { Route, Routes } from "react-router"
 import ChatScreen from "./Screens/ChatScreen/ChatScreen"

@@ -9,7 +9,6 @@ import { useContext } from 'react'
 import { Link } from 'react-router'
 import ContactSearchForm from '../ContactSearchForm/ContactSearchForm'
 import ContactList from '../ContactList/ContactList'
-import { ThemeContext } from '../../Context/ThemeContext'
 import { MdDonutLarge, MdChat, MdMoreVert, MdGroups } from "react-icons/md"; // Iconos Material Design
 
 /*
@@ -17,10 +16,6 @@ Componente Sidebar
 Contiene: Cabecera (perfil + acciones), Buscador, Filtros y Lista de Contactos
 */
 export default function ContactSidebar() {
-
-    // El contexto de tema podría usarse aquí si quisiéramos togglear
-    // pero WhatsApp Web siempre es dark/light completo.
-    const { isDark } = useContext(ThemeContext)
 
     return (
         <aside className="contact-sidebar">
